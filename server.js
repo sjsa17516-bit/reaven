@@ -5,6 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { D1, completeHandshake } from "./runtime.mjs";
+import { startBot } from "./bot.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const runtimeUrl = pathToFileURL(path.join(here, "runtime.mjs")).href;
@@ -92,4 +93,5 @@ server.on("error", (e) => {
   else { console.error(e); process.exit(1); }
 });
 server.listen(port, "::", () => console.log(`Panel listening on :${port}`));
+startBot({ env, worker });
 process.on("SIGTERM", () => process.exit(0));
