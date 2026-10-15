@@ -1,0 +1,9 @@
+{
+  "name": "panel-pro-railway",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": { "start": "node --disable-warning=ExperimentalWarning server.js" },
+  "engines": { "node": ">=22.13" }
+}
